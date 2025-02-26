@@ -9,19 +9,8 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import GradientBorderButton from "./GradientBorderButton";
 
-const Navbar = ({
-  navItems,
-  className,
-}: {
-  navItems: {
-    name: string;
-    link: string;
-    icon?: JSX.Element;
-  }[];
-  className?: string;
-}) => {
+const Navbar = () => {
   const { scrollYProgress } = useScroll();
 
   const [visible, setVisible] = useState(true);
@@ -57,26 +46,39 @@ const Navbar = ({
           duration: 0.2,
         }}
         className={cn(
-          "flex max-w-fit md:min-w-[70vw] lg:min-w-fit fixed z-[5000] top-10 inset-x-0 mx-auto px-10 py-5 rounded-lg border border-white/50 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] items-center justify-center space-x-8 backdrop-blur-lg bg-slate-900/75",
-          className
+          "flex max-w-fit md:min-w-[70vw] lg:min-w-fit fixed z-[5000] top-10 inset-x-0 mx-auto px-10 py-5 rounded-lg border border-white/50 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] items-center justify-center space-x-8 backdrop-blur-lg bg-slate-900/75"
         )}
         style={{
           borderRadius: "12px",
           border: "1px solid rgba(255, 255, 255, 0.125)",
         }}
       >
-        {navItems.map((navItem: any, idx: number) => (
-          <Link
-            key={`link=${idx}`}
-            href={navItem.link}
-            className={cn(
-              "relative text-neutral-50 items-center flex space-x-1 hover:text-neutral-300"
-            )}
-          >
-            <span className="block sm:hidden">{navItem.icon}</span>
-            <span className="text-sm !cursor-pointer">{navItem.name}</span>
-          </Link>
-        ))}
+        <Link
+          href="/"
+          className={cn(
+            "relative text-neutral-50 items-center flex space-x-1 hover:text-neutral-300"
+          )}
+        >
+          <span className="text-sm !cursor-pointer">Home</span>
+        </Link>
+
+        <Link
+          href="/projects"
+          className={cn(
+            "relative text-neutral-50 items-center flex space-x-1 hover:text-neutral-300"
+          )}
+        >
+          <span className="text-sm !cursor-pointer">Projects</span>
+        </Link>
+
+        <Link
+          href="/articles"
+          className={cn(
+            "relative text-neutral-50 items-center flex space-x-1 hover:text-neutral-300"
+          )}
+        >
+          <span className="text-sm !cursor-pointer">Articles</span>
+        </Link>
       </motion.div>
     </AnimatePresence>
   );

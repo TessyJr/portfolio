@@ -1,7 +1,5 @@
 "use client";
 
-import { navItems } from "@/data";
-
 import Navbar from "@/components/ui/Navbar";
 
 import Experience from "@/components/Experience";
@@ -13,7 +11,7 @@ import ArticlesHighlight from "@/components/ArticlesHighlight";
 const Home = () => {
   return (
     <main>
-      <Navbar navItems={navItems} />
+      <Navbar />
 
       <HomeHero />
       <Experience />

@@ -1,7 +1,5 @@
 "use client";
 
-import { navItems } from "@/data";
-
 import Navbar from "@/components/ui/Navbar";
 import Highlight from "@/components/ui/Highlight";
 
@@ -14,7 +12,7 @@ import { motion } from "framer-motion";
 const Projects = () => {
   return (
     <main>
-      <Navbar navItems={navItems} />
+      <Navbar />
 
       <ProjectsHero>
         <h1 className="relative z-10 text-5xl md:text-6xl lg:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 text-center font-sans font-bold mb-8 pb-1">

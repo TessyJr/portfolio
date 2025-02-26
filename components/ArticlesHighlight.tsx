@@ -2,10 +2,9 @@
 
 import Link from "next/link";
 
-import { articles } from "@/data";
-
 import GradientBorderButton from "./ui/GradientBorderButton";
 import ArticleCard from "./ui/ArticleCard";
+import { articles } from "@/data/articles";
 
 const ArticlesHighlight = () => {
   return (
@@ -16,9 +15,13 @@ const ArticlesHighlight = () => {
       </h1>
 
       <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8 lg:gap-10 w-full">
-        {articles.slice().reverse().slice(0, 3).map((article) => (
-          <ArticleCard key={article.id} article={article} />
-        ))}
+        {articles
+          .slice()
+          .reverse()
+          .slice(0, 3)
+          .map((article) => (
+            <ArticleCard key={article.id} article={article} />
+          ))}
       </div>
 
       <div className="flex justify-center text-center">

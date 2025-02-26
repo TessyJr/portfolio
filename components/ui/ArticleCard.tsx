@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { LinkedIn } from "@/data/social-icons";
+import { Article } from "@/app/types/Article";
 
 const ArticleCard = ({ article }: { article: Article }) => {
   return (
@@ -28,17 +30,9 @@ const ArticleCard = ({ article }: { article: Article }) => {
 
       <div className="flex items-center justify-between w-full">
         <div className="flex items-center">
-          {article.iconLists.map((icon, index) => (
-            <div
-              key={index}
-              className="border border-black/[.2] rounded-full bg-slate-100 md:w-10 md:h-10 w-9 h-9 flex justify-center items-center"
-              style={{
-                transform: `translateX(-${8 * index}px)`,
-              }}
-            >
-              <Image src={icon} alt="icon" fill className="p-2 object-cover" />
-            </div>
-          ))}
+          <div className="border border-black/[.2] rounded-full bg-slate-100 w-10 h-10 flex justify-center items-center p-2">
+            <div className="w-full h-full text-indigo-500">{LinkedIn.icon}</div>
+          </div>
         </div>
 
         <Link

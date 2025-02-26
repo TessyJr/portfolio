@@ -1,11 +1,5 @@
 import { Article } from "@/app/types/Article";
 
-export const navItems = [
-  { name: "Home", link: "/" },
-  { name: "Projects", link: "/projects" },
-  { name: "Articles", link: "/articles" },
-];
-
 export const articles: Article[] = [
   {
     id: 1,

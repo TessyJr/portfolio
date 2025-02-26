@@ -1,6 +1,5 @@
 "use client";
 
-import { navItems } from "@/data";
 import Image from "next/image";
 
 import Navbar from "@/components/ui/Navbar";
@@ -24,7 +23,7 @@ const ProjectDetail = ({ params }: { params: { id: string } }) => {
 
   return (
     <main className="bg-black">
-      <Navbar navItems={navItems} />
+      <Navbar />
 
       <section className="min-h-screen flex flex-col px-[8%] md:px-[10%] lg:px-[12%] py-32 gap-16 text-white">
         <button

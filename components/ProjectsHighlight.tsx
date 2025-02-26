@@ -17,20 +17,20 @@ const ProjectsHighlight = () => {
       </h1>
 
       <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8 lg:gap-10 w-full">
-         {projects
-         .slice()
-         .reverse()
-         .slice(0, 3)
-         .map((project) => {
-          switch (project.category) {
-            case "web":
-              return <ProjectWebCard key={project.id} project={project} />;
-            case "ios":
-              return <ProjectIOSCard key={project.id} project={project} />;
-            default:
-              return null;
-          }
-        })}
+        {projects
+          .slice()
+          .reverse()
+          .slice(0, 5)
+          .map((project) => {
+            switch (project.category) {
+              case "web":
+                return <ProjectWebCard key={project.id} project={project} />;
+              case "ios":
+                return <ProjectIOSCard key={project.id} project={project} />;
+              default:
+                return null;
+            }
+          })}
       </div>
 
       <div className="flex justify-center text-center">

@@ -7,6 +7,7 @@ import {
   FaLaravel,
   FaPhp,
   FaSwift,
+  FaUnity,
   FaWordpress,
 } from "react-icons/fa6";
 import { SiJquery, SiTailwindcss, SiWoocommerce } from "react-icons/si";
@@ -64,4 +65,9 @@ export const Php: TechStack = {
 export const Laravel: TechStack = {
   name: "Laravel",
   icon: <FaLaravel className="h-full w-full object-contain" />,
+};
+
+export const Unity: TechStack = {
+  name: "Unity",
+  icon: <FaUnity className="h-full w-full object-contain" />,
 };

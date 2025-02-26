@@ -1,11 +1,13 @@
-interface Project {
-    id: number;
-    category: string;
-    type: string;
-    title: string;
-    des: string;
-    img: string;
-    iconLists: string[]; // Array of strings for the icon lists
-    screenshotLink: string;
-    liveLink: string;
-  }
+import { TechStack } from "./TechStack";
+
+export type Project = {
+  id: number;
+  category: string;
+  title: string;
+  desc: string;
+  role: string;
+  img: string;
+  techStack: TechStack[];
+  screenshotLink: string;
+  liveLink: string;
+};

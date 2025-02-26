@@ -44,9 +44,8 @@ export const HomeHero = () => {
             Hey there! I&apos;m a developer specializing in{" "}
             <span className="font-bold">frontend web development</span>, with
             experience in{" "}
-            <span className="font-bold">iOS and game development</span>. Based
-            in Jakarta, Indonesia. Explore my journey through code and
-            innovation.
+            <span className="font-bold">unity game development</span>. Based in
+            Jakarta, Indonesia. Explore my journey through code and innovation.
           </p>
 
           <div className="w-fit mt-4">

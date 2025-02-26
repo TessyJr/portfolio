@@ -2,11 +2,9 @@
 
 import Link from "next/link";
 
-import { projects } from "@/data";
-
 import GradientBorderButton from "./ui/GradientBorderButton";
-import ProjectWebCard from "./ui/ProjectWebCard";
-import ProjectIOSCard from "./ui/ProjectIOSCard";
+import ProjectCard from "./ui/ProjectCard";
+import { projects } from "@/data/projects";
 
 const ProjectsHighlight = () => {
   return (
@@ -20,16 +18,9 @@ const ProjectsHighlight = () => {
         {projects
           .slice()
           .reverse()
-          .slice(0, 5)
+          .slice(0, 3)
           .map((project) => {
-            switch (project.category) {
-              case "web":
-                return <ProjectWebCard key={project.id} project={project} />;
-              case "ios":
-                return <ProjectIOSCard key={project.id} project={project} />;
-              default:
-                return null;
-            }
+            return <ProjectCard key={project.id} project={project} />;
           })}
       </div>
 

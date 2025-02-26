@@ -1,4 +1,4 @@
-interface Article {
+export type Article = {
   id: number;
   date: string;
   duration: string;
@@ -6,4 +6,4 @@ interface Article {
   img: string;
   iconLists: string[];
   link: string;
-}
+};

@@ -1,4 +1,5 @@
 "use client";
+
 import { cn } from "@/lib/utils";
 import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
 import React from "react";
@@ -63,4 +64,4 @@ const ProjectsHero = ({
   );
 };
 
-export default ProjectsHero
+export default ProjectsHero;

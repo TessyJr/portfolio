@@ -1,18 +1,37 @@
 "use client";
 
-import React, { useState } from "react";
-
-import { projects } from "@/data";
-import GradientBorderButton from "./ui/GradientBorderButton";
-import ProjectWebCard from "./ui/ProjectWebCard";
-import ProjectIOSCard from "./ui/ProjectIOSCard";
+import React, { useState, useEffect, useRef } from "react";
+import ProjectCard from "./ui/ProjectCard";
+import { projects } from "@/data/projects";
 
 const ProjectsAll = () => {
   const [visibleCount, setVisibleCount] = useState(6);
+  const loadMoreRef = useRef(null); // Ref for detecting the bottom
 
   const handleLoadMore = () => {
     setVisibleCount((prevCount) => prevCount + 6);
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          handleLoadMore();
+        }
+      },
+      { threshold: 1.0 } // Trigger when fully in view
+    );
+
+    if (loadMoreRef.current) {
+      observer.observe(loadMoreRef.current);
+    }
+
+    return () => {
+      if (loadMoreRef.current) {
+        observer.unobserve(loadMoreRef.current);
+      }
+    };
+  }, []);
 
   return (
     <section className="bg-black w-full flex flex-col px-[8%] md:px-[10%] lg:px-[12%] pb-16 md:pb-20 lg:pb-24 gap-4 md:gap-8 lg:gap-12">
@@ -20,44 +39,16 @@ const ProjectsAll = () => {
         {projects
           .slice()
           .reverse()
-          .slice(0, 3)
-          .map((project) => {
-            switch (project.category) {
-              case "web":
-                return <ProjectWebCard key={project.id} project={project} />;
-              case "ios":
-                return <ProjectIOSCard key={project.id} project={project} />;
-              default:
-                return null;
-            }
-          })}
+          .slice(0, visibleCount)
+          .map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
       </div>
 
-      <div className="flex justify-center text-center mt-8 md:mt-6 lg:mt-4">
-        <div>
-          <GradientBorderButton
-            handleClick={handleLoadMore}
-            title="Show more"
-            icon={
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="size-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"
-                />
-              </svg>
-            }
-            position="right"
-          />
-        </div>
-      </div>
+      {/* Invisible div to trigger loading more when in view */}
+      {visibleCount < projects.length && (
+        <div ref={loadMoreRef} className="h-10 w-full"></div>
+      )}
     </section>
   );
 };

@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-export type TechStack = {
+export type Social = {
   name: string;
   icon: ReactNode;
 };

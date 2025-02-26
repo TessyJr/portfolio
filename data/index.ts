@@ -27,21 +27,3 @@ export const articles: Article[] = [
     link: "https://www.linkedin.com/pulse/typecaster-my-experience-making-challenging-action-rpg-tessy-pfa3c/?trackingId=pur2YPx3Q8%2BnRz8vq%2BIqGw%3D%3D",
   },
 ];
-
-export const socialMedia = [
-  {
-    id: 1,
-    img: "/icons/socials/github.svg",
-    link: "https://github.com/TessyJr",
-  },
-  {
-    id: 2,
-    img: "/icons/socials/linkedin.svg",
-    link: "https://www.linkedin.com/in/christophernathanaeltessy/",
-  },
-  {
-    id: 3,
-    img: "/icons/socials/instagram.svg",
-    link: "https://www.instagram.com/christophertessy_",
-  },
-];

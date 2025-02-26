@@ -10,7 +10,7 @@ import {
   TailwindCss,
   WooCommerce,
   WordPress,
-} from "./tech-stacks";
+} from "./tech-stack-icons";
 import { Project } from "@/app/types/Project";
 
 export const projects: Project[] = [

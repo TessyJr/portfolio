@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { socialMedia } from "@/data";
+import { socialMedia } from "@/data/social-media";
 
 import GradientBorderButton from "./ui/GradientBorderButton";
 import Link from "next/link";
@@ -49,18 +49,15 @@ const Contact = () => {
         </p>
 
         <div className="flex items-center gap-4">
-          {socialMedia.map((info) => (
+          {socialMedia.map((socialMedia, index) => (
             <Link
-              key={info.id}
-              href={info.link}
+              key={index}
+              href={socialMedia.link}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div
-                key={info.id}
-                className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-white rounded-lg"
-              >
-                <Image src={info.img} alt="icons" width={20} height={20} />
+              <div className="p-2 w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-white rounded-lg text-black">
+                {socialMedia.icon.icon}
               </div>
             </Link>
           ))}

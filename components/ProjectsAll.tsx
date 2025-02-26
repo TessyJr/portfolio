@@ -6,7 +6,7 @@ import { projects } from "@/data/projects";
 
 const ProjectsAll = () => {
   const [visibleCount, setVisibleCount] = useState(6);
-  const loadMoreRef = useRef(null); // Ref for detecting the bottom
+  const loadMoreRef = useRef(null);
 
   const handleLoadMore = () => {
     setVisibleCount((prevCount) => prevCount + 6);
@@ -19,7 +19,7 @@ const ProjectsAll = () => {
           handleLoadMore();
         }
       },
-      { threshold: 1.0 } // Trigger when fully in view
+      { threshold: 1.0 }
     );
 
     if (loadMoreRef.current) {

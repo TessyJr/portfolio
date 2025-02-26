@@ -102,7 +102,7 @@ export const projects: Project[] = [
     id: 8,
     category: "Web Development",
     title: "PT. Dutacitra Nusa Jaya",
-    desc: "Developed a company profile website for PT. Dutacitra Nusa Jaya - one of the world's leading companies in the automatic door industry.",
+    desc: "PT. Dutacitra Nusa Jaya is a leading specialist in Automatic Doors, initially focusing on Automatic Gates and Rolling Shutters. Since being appointed as the Sole Distributor for Manusa Automatic Doors in Indonesia in 2003, the company has dedicated itself to providing high-quality products, installation, after-sales service, maintenance, and comprehensive spare part solutions.",
     role: "Full-stack Developer",
     img: "/projects/web/pt-dutacitra-nusa-jaya.png",
     techStack: [Html, Css, Js, Php, TailwindCss, JQuery, Laravel],

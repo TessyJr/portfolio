@@ -8,6 +8,9 @@ import { useRouter } from "next/navigation";
 import { ShootingStars } from "@/components/ui/ShootingStars";
 import { StarsBackground } from "@/components/ui/StarsBackground";
 import { projects } from "@/data/projects";
+import { TechStackTooltip } from "@/components/ui/TechStackTooltip";
+import Contact from "@/components/Contact";
+import Link from "next/link";
 
 const ProjectDetail = ({ params }: { params: { id: string } }) => {
   const router = useRouter();
@@ -23,7 +26,7 @@ const ProjectDetail = ({ params }: { params: { id: string } }) => {
     <main className="bg-black">
       <Navbar navItems={navItems} />
 
-      <section className="min-h-screen flex flex-col px-[8%] md:px-[10%] lg:px-[12%] pt-32 gap-16 text-white">
+      <section className="min-h-screen flex flex-col px-[8%] md:px-[10%] lg:px-[12%] py-32 gap-16 text-white">
         <button
           className="inline-flex px-7 h-12 animate-shimmer items-center justify-center rounded-lg border border-slate-400 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] text-sm font-medium text-slate-100 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-slate-50 gap-2 w-fit"
           onClick={() => router.back()}
@@ -46,13 +49,13 @@ const ProjectDetail = ({ params }: { params: { id: string } }) => {
         </button>
 
         <div
-          className="relative flex items-center justify-center w-full max-w-[640px] aspect-[16/10] overflow-hidden group bg-cover rounded-lg border border-white/[0.2] group-hover:border-white/[0.4] transition duration-700 self-center"
+          className="relative flex items-center justify-center w-full max-w-[800px] aspect-[16/10] overflow-hidden group bg-cover rounded-lg border border-white/[0.2] group-hover:border-white/[0.4] transition duration-700 self-center"
           style={{
             backgroundImage: "url('/projects/bg.png')",
             backgroundColor: "#13162D",
           }}
         >
-          <div className="absolute overflow-hidden w-full h-full rounded-lg rotate-2 top-6 left-4">
+          <div className="absolute overflow-hidden w-full h-full rounded-lg rotate-2 top-12 left-6">
             <Image
               src={project.img}
               alt="cover"
@@ -62,36 +65,86 @@ const ProjectDetail = ({ params }: { params: { id: string } }) => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-4">
           <p className="uppercase tracking-widest text-blue-100 max-w-80">
             {project.category}
           </p>
           <h1 className="text-5xl font-bold">{project.title}</h1>
-        </div>
-
-        <div className="flex flex-col gap-4">
-          <h2 className="text-3xl font-semibold">Description</h2>
           <p className="">{project.desc}</p>
         </div>
 
         <div className="flex flex-col gap-4">
-          <h2 className="text-3xl font-semibold">Role</h2>
+          <h2 className="text-2xl font-semibold">Tech Stack</h2>
+
+          <div className="flex items-center">
+            {project.techStack.map((techStack, index) => (
+              <TechStackTooltip
+                key={index}
+                techStack={techStack}
+                index={index}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-4">
+          <h2 className="text-2xl font-semibold">Role</h2>
           <p className="">{project.role}</p>
         </div>
 
         <div className="flex flex-col gap-4">
-          <h2 className="text-3xl font-semibold">Tech Stack</h2>
-          <p className="">{project.desc}</p>
-        </div>
+          <h2 className="text-2xl font-semibold">
+            Screenshots and Live Preview
+          </h2>
 
-        <div className="flex flex-col gap-4">
-          <h2 className="text-3xl font-semibold">Contributions</h2>
-          <p className="">{project.desc}</p>
+          <Link
+            href={project.screenshotLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex text-sm font-medium w-full"
+          >
+            <button className="inline-flex px-6 h-12 animate-shimmer items-center justify-center rounded-lg border border-slate-400 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] text-slate-100 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-full">
+              Screenshots
+            </button>
+          </Link>
+
+          {project.liveLink ? (
+            <Link
+              href={project.liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex text-sm font-medium w-full"
+            >
+              <button className="inline-flex px-6 h-12 animate-shimmer items-center justify-center gap-2 rounded-lg border border-emerald-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] text-emerald-100 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-emerald-50 w-full">
+                <span className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-400"></span>
+                </span>
+                Live Preview
+              </button>
+            </Link>
+          ) : (
+            <div>
+              <button className="inline-flex px-6 h-12 items-center justify-center gap-2 rounded-lg border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] text-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-full pointer-events-none">
+                <span className="flex h-3 w-3">
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-slate-800"></span>
+                </span>
+                Live Preview
+              </button>
+            </div>
+          )}
+
+          <p className="">
+            *Please note that the live preview for web development projects may
+            be subject to changes or updates by the client.
+          </p>
         </div>
       </section>
 
       <ShootingStars />
       <StarsBackground />
+
+      <Contact />
     </main>
   );
 };

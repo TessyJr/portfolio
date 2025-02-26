@@ -9,14 +9,14 @@ export const TechStackTooltip = ({
 }) => {
   return (
     <div
-      className="p-2 border border-black/[.2] rounded-full bg-slate-100 lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center group/tooltip relative"
+      className="p-2 border border-black/[.2] rounded-full bg-slate-100 w-10 h-10 flex justify-center items-center group/tooltip relative"
       style={{
         transform: `translateX(-${8 * index}px)`,
       }}
     >
       <div className="w-full h-full text-indigo-500">{techStack.icon}</div>
 
-      <span className="absolute bg-white py-1 px-2 rounded-md text-xs w-fit opacity-0 group-hover/tooltip:-translate-y-10 group-hover/tooltip:opacity-100 transition pointer-events-none whitespace-nowrap">
+      <span className="absolute bg-white py-1 px-2 rounded-md text-xs w-fit opacity-0 group-hover/tooltip:-translate-y-10 group-hover/tooltip:opacity-100 transition pointer-events-none whitespace-nowrap text-black">
         {techStack.name}
       </span>
     </div>

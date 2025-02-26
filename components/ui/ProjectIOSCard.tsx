@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const ProjectIOSCard = ({ project }: { project: Project }) => {
   return (
@@ -45,7 +46,7 @@ const ProjectIOSCard = ({ project }: { project: Project }) => {
       </div>
 
       <div className="flex items-center w-full">
-        <a
+        <Link
           href={project.liveLink}
           target="_blank"
           rel="noopener noreferrer"
@@ -61,7 +62,7 @@ const ProjectIOSCard = ({ project }: { project: Project }) => {
             />
             Project Details
           </button>
-        </a>
+        </Link>
       </div>
     </div>
   );

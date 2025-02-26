@@ -3,6 +3,7 @@
 import { experiences } from "@/data";
 
 import GradientBorderButton from "./ui/GradientBorderButton";
+import Link from "next/link";
 
 const Experience = () => {
   return (
@@ -34,7 +35,7 @@ const Experience = () => {
       </ol>
 
       <div className="flex justify-center text-center -mt-4 md:-mt-8 lg:-mt-12">
-        <a
+        <Link
           href="https://www.linkedin.com/in/christophernathanaeltessy/details/experience/"
           target="_blank"
           rel="noopener noreferrer"
@@ -59,7 +60,7 @@ const Experience = () => {
             }
             position="right"
           />
-        </a>
+        </Link>
       </div>
     </section>
   );

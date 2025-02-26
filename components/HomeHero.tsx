@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import Highlight from "@/components/ui/Highlight";
 import GradientBorderButton from "./ui/GradientBorderButton";
+import Link from "next/link";
 
 export const HomeHero = () => {
   return (
@@ -49,26 +50,34 @@ export const HomeHero = () => {
           </p>
 
           <div className="w-fit mt-4">
-            <GradientBorderButton
-              title="Download CV"
-              icon={
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="size-5"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"
-                  />
-                </svg>
-              }
-              position="right"
-            />
+            <Link
+              href="/cv.pdf"
+              download="Christopher Nathaael Tessy_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              passHref
+            >
+              <GradientBorderButton
+                title="Download CV"
+                icon={
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="size-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"
+                    />
+                  </svg>
+                }
+                position="right"
+              />
+            </Link>
           </div>
         </div>
       </div>

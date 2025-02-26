@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const ProjectWebCard = ({ project }: { project: Project }) => {
   return (
@@ -11,14 +12,9 @@ const ProjectWebCard = ({ project }: { project: Project }) => {
           backgroundColor: "#13162D",
         }}
       >
-          <div className="absolute overflow-hidden w-full h-full rounded-lg rotate-2 top-6 left-4">
-            <Image
-              src={project.img}
-              alt="cover"
-              fill
-              className="object-cover"
-            />
-          </div>
+        <div className="absolute overflow-hidden w-full h-full rounded-lg rotate-2 top-6 left-4">
+          <Image src={project.img} alt="cover" fill className="object-cover" />
+        </div>
       </div>
 
       <div className="flex flex-col gap-1 md:gap-1.5 lg:gap-2">
@@ -48,9 +44,9 @@ const ProjectWebCard = ({ project }: { project: Project }) => {
           ))}
         </div>
       </div>
-      
+
       <div className="flex items-center justify-between gap-2 w-full">
-        <a
+        <Link
           href={project.screenshotLink}
           target="_blank"
           rel="noopener noreferrer"
@@ -59,9 +55,9 @@ const ProjectWebCard = ({ project }: { project: Project }) => {
           <button className="inline-flex px-6 md:px-7 lg:px-8 h-12 animate-shimmer items-center justify-center rounded-lg border border-slate-400 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] text-slate-100 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-full">
             Screenshots
           </button>
-        </a>
+        </Link>
 
-        <a
+        <Link
           href={project.liveLink}
           target="_blank"
           rel="noopener noreferrer"
@@ -74,7 +70,7 @@ const ProjectWebCard = ({ project }: { project: Project }) => {
             </span>
             Live Site
           </button>
-        </a>
+        </Link>
       </div>
     </div>
   );

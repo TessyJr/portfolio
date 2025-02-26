@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const ArticleCard = ({ article }: { article: Article }) => {
   return (
@@ -11,14 +12,9 @@ const ArticleCard = ({ article }: { article: Article }) => {
           backgroundColor: "#13162D",
         }}
       >
-          <div className="absolute overflow-hidden w-full h-full rounded-lg rotate-2 top-6 left-4">
-            <Image
-              src={article.img}
-              alt="cover"
-              fill
-              className="object-cover"
-            />
-          </div>
+        <div className="absolute overflow-hidden w-full h-full rounded-lg rotate-2 top-6 left-4">
+          <Image src={article.img} alt="cover" fill className="object-cover" />
+        </div>
       </div>
 
       <div className="flex flex-col gap-1 md:gap-1.5 lg:gap-2">
@@ -45,7 +41,7 @@ const ArticleCard = ({ article }: { article: Article }) => {
           ))}
         </div>
 
-        <a
+        <Link
           href={article.link}
           target="_blank"
           rel="noopener noreferrer"
@@ -54,7 +50,7 @@ const ArticleCard = ({ article }: { article: Article }) => {
           <button className="inline-flex px-7 h-12 animate-shimmer items-center justify-center rounded-lg border border-slate-400 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] font-medium text-slate-100 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-full">
             Read More
           </button>
-        </a>
+        </Link>
       </div>
     </div>
   );

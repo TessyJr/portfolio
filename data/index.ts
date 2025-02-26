@@ -6,37 +6,6 @@ export const navItems = [
   { name: "Articles", link: "/articles" },
 ];
 
-export const experiences = [
-  {
-    id: 1,
-    duration: "March 2024 - Present",
-    title: "Junior iOS Developer",
-    company: "Apple Developer Academy @ BINUS",
-    desc: "Collaborated with a diverse team of developers, designers, and project managers to ideate and develop innovative iOS applications",
-  },
-  {
-    id: 2,
-    duration: "May 2023 - Present",
-    title: "Front-End Developer",
-    company: "WebCreativs",
-    desc: "Worked collaboratively with a team of developers, designers, and project managers to create fully functional websites tailored to client needs.",
-  },
-  {
-    id: 3,
-    duration: "September 2022 - Present",
-    title: "Freelance Web Developer",
-    company: "",
-    desc: "Independently developed fully functional websites tailored to client needs, managing all aspects of the project from design to deployment.",
-  },
-  {
-    id: 4,
-    duration: "February 2023 - February 2024",
-    title: "Manager",
-    company: "FAVE SOLUTION @ Bina Nusantara Computer Club",
-    desc: "Lead a talented team of developers and designers to deliver exceptional web solutions, ensuring that our client-centric approach consistently meets or exceeds client expectations.",
-  },
-];
-
 export const articles: Article[] = [
   {
     id: 1,

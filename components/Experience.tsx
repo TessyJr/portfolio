@@ -1,11 +1,12 @@
 "use client";
 
-import { experiences } from "@/data";
-
+import { experiences } from "@/data/experiences";
 import GradientBorderButton from "./ui/GradientBorderButton";
 import Link from "next/link";
 
 const Experience = () => {
+  const reversedExperiences = [...experiences].reverse();
+
   return (
     <section className="bg-black w-full flex flex-col px-[8%] md:px-[10%] lg:px-[12%] py-16 md:py-20 lg:py-24 gap-8 md:gap-12 lg:gap-16">
       <h1 className="heading text-white">
@@ -13,13 +14,15 @@ const Experience = () => {
       </h1>
 
       <ol className="relative border-s border-gray-700">
-        {experiences.map((item) => (
+        {reversedExperiences.map((item) => (
           <li className="mb-10 ms-4" key={item.id}>
             <div className="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-gray-900 bg-gray-700"></div>
+
             <time className="mb-1 text-sm font-normal leading-none text-gray-500">
               {item.duration}
             </time>
-            <h3 className="text-lg font-bold text-white">
+
+            <h3 className="text-xl font-bold text-white">
               {item.title}{" "}
               {item.company ? (
                 <span className="font-light">at {item.company}</span>
@@ -27,6 +30,7 @@ const Experience = () => {
                 ""
               )}
             </h3>
+
             <p className="mb-4 text-base font-normal text-gray-400">
               {item.desc}
             </p>

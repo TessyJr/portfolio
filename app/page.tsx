@@ -10,7 +10,7 @@ import ArticlesHighlight from "@/components/ArticlesHighlight";
 
 const Home = () => {
   return (
-    <main>
+    <main className="bg-black">
       <Navbar />
 
       <HomeHero />

@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 
 const Projects = () => {
   return (
-    <main>
+    <main className="bg-black">
       <Navbar />
 
       <ProjectsHero>

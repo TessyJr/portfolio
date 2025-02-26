@@ -5,7 +5,7 @@ import Contact from "@/components/Contact";
 
 const Articles = () => {
   return (
-    <main>
+    <main className="bg-black">
       <Navbar />
 
       <div className="min-h-screen">

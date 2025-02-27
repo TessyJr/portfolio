@@ -8,13 +8,13 @@ import { articles } from "@/data/articles";
 
 const ArticlesHighlight = () => {
   return (
-    <section className="bg-black w-full flex flex-col px-[8%] md:px-[10%] lg:px-[12%] py-16 md:py-20 lg:py-24 gap-8 md:gap-10 lg:gap-12">
+    <section className="flex w-full flex-col gap-8 bg-black px-[8%] py-16 md:gap-10 md:px-[10%] md:py-20 lg:gap-12 lg:px-[12%] lg:py-24">
       <h1 className="heading text-white">
         Hightlights from My{" "}
         <span className="text-purple-300">Articles Collection</span>
       </h1>
 
-      <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8 lg:gap-10 w-full">
+      <div className="flex w-full flex-wrap items-center justify-center gap-6 md:gap-8 lg:gap-10">
         {articles
           .slice()
           .reverse()
@@ -25,7 +25,7 @@ const ArticlesHighlight = () => {
       </div>
 
       <div className="flex justify-center text-center">
-        <Link href="/projects">
+        <Link href="/articles">
           <GradientBorderButton
             title="See all articles"
             icon={

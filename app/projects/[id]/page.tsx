@@ -64,7 +64,7 @@ export default function ProjectDetails({
           <div className="absolute left-6 top-12 h-full w-full rotate-2 overflow-hidden rounded-lg">
             <Image
               src={project.img}
-              alt="cover"
+              alt={`Cover image of ${project.title} project`}
               fill
               className="object-cover"
             />

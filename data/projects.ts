@@ -118,7 +118,7 @@ export const projects: Project[] = [
     title: "TypeCaster (Old)",
     desc: "TypeCaster is a 2D pixel-art action RPG where players battle enemies by typing to cast powerful spells, combining fast-paced combat with a unique typing mechanic.",
     role: "Lead Game Developer",
-    img: "/projects/game/typecaster.png",
+    img: "/projects/game/typecaster-old.png",
     techStack: [Swift],
     screenshotLink:
       "https://drive.google.com/drive/folders/1nFqBDJIJ7YVDkizxsWUgf-f6krLpGCBY?usp=share_link",

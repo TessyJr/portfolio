@@ -6,27 +6,32 @@ import { TechStackTooltip } from "./TechStackTooltip";
 
 const ProjectCard = ({ project }: { project: Project }) => {
   return (
-    <div className="group p-5 w-full md:max-w-96 flex flex-col gap-6 md:gap-7 lg:gap-8 rounded-xl bg-black border border-white/[0.2] hover:border-white/[0.4] transition duration-700">
+    <div className="group flex w-full flex-col gap-6 rounded-xl border border-white/[0.2] bg-black p-5 transition duration-700 hover:border-white/[0.4] md:max-w-96 md:gap-7 lg:gap-8">
       <div
-        className="relative flex items-center justify-center w-full aspect-[16/10] overflow-hidden group bg-cover rounded-lg border border-white/[0.2] group-hover:border-white/[0.4] transition duration-700"
+        className="group relative flex aspect-[16/10] w-full items-center justify-center overflow-hidden rounded-lg border border-white/[0.2] bg-cover transition duration-700 group-hover:border-white/[0.4]"
         style={{
           backgroundImage: "url('/projects/bg.png')",
           backgroundColor: "#13162D",
         }}
       >
-        <div className="absolute overflow-hidden w-full h-full rounded-lg rotate-2 top-6 left-4">
-          <Image src={project.img} alt="cover" fill className="object-cover" />
+        <div className="absolute left-4 top-6 h-full w-full rotate-2 overflow-hidden rounded-lg">
+          <Image
+            src={project.img}
+            alt={`Cover image of ${project.title} project`}
+            fill
+            className="object-cover"
+          />
         </div>
       </div>
 
       <div className="flex flex-col gap-1 md:gap-1.5 lg:gap-2">
-        <p className="uppercase tracking-widest text-xs text-blue-100 max-w-80">
+        <p className="max-w-80 text-xs uppercase tracking-widest text-blue-100">
           {project.category}
         </p>
-        <h1 className="font-bold lg:text-2xl md:text-xl text-lg line-clamp-1 text-white">
+        <h1 className="line-clamp-1 text-lg font-bold text-white md:text-xl lg:text-2xl">
           {project.title}
         </h1>
-        <p className="lg:text-base lg:font-normal font-light text-sm line-clamp-2 text-gray-400">
+        <p className="line-clamp-2 text-sm font-light text-gray-400 lg:text-base lg:font-normal">
           {project.desc}
         </p>
       </div>
@@ -39,12 +44,12 @@ const ProjectCard = ({ project }: { project: Project }) => {
         </div>
       </div>
 
-      <div className="gap-2 w-full grid grid-cols-2">
+      <div className="grid w-full grid-cols-2 gap-2">
         <Link
           href={`projects/${project.id}`}
-          className="flex text-sm font-medium w-full"
+          className="flex w-full text-sm font-medium"
         >
-          <button className="inline-flex px-6 h-12 animate-shimmer items-center justify-center rounded-lg border border-slate-400 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] text-slate-100 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-full">
+          <button className="inline-flex h-12 w-full animate-shimmer items-center justify-center rounded-lg border border-slate-400 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 text-slate-100 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-slate-50">
             Project Details
           </button>
         </Link>
@@ -54,21 +59,21 @@ const ProjectCard = ({ project }: { project: Project }) => {
             href={project.liveLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex text-sm font-medium w-full"
+            className="flex w-full text-sm font-medium"
           >
-            <button className="inline-flex px-6 h-12 animate-shimmer items-center justify-center gap-2 rounded-lg border border-emerald-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] text-emerald-100 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-emerald-50 w-full">
+            <button className="inline-flex h-12 w-full animate-shimmer items-center justify-center gap-2 rounded-lg border border-emerald-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 text-emerald-100 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-emerald-50">
               <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-400"></span>
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-300 opacity-75"></span>
+                <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-400"></span>
               </span>
               Live Preview
             </button>
           </Link>
         ) : (
           <div>
-            <button className="inline-flex px-6 h-12 items-center justify-center gap-2 rounded-lg border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] text-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-full pointer-events-none">
+            <button className="pointer-events-none inline-flex h-12 w-full items-center justify-center gap-2 rounded-lg border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 text-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
               <span className="flex h-3 w-3">
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-slate-800"></span>
+                <span className="relative inline-flex h-3 w-3 rounded-full bg-slate-800"></span>
               </span>
               Live Preview
             </button>

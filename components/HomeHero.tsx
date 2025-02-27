@@ -8,24 +8,24 @@ import Link from "next/link";
 
 export const HomeHero = () => {
   return (
-    <section className="min-h-screen w-full bg-slate-950 bg-grid-white/[0.1] relative flex items-center justify-center px-[8%] md:px-[10%] lg:px-[12%] pt-32">
-      <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+    <section className="relative flex min-h-screen w-full items-center justify-center bg-slate-950 px-[8%] pt-32 bg-grid-white/[0.1] md:px-[10%] lg:px-[12%]">
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
-      <div className="relative z-10 w-full flex flex-col gap-4 md:gap-6 lg:gap-8">
+      <div className="relative z-10 flex w-full flex-col gap-4 md:gap-6 lg:gap-8">
         <div className="flex flex-col gap-4 md:gap-5 lg:gap-6">
           <Image
-            src="/me.JPG"
-            alt="Picture of Christopher"
+            src="/me.jpg"
+            alt="Picture of Christophe Nathanael Tessy"
             width={256}
             height={0}
-            className="w-48 md:w-56 lg:w-64 rounded-lg"
+            className="w-48 rounded-lg md:w-56 lg:w-64"
           />
 
-          <p className="uppercase tracking-widest text-sm text-blue-100 -mb-2">
+          <p className="-mb-2 text-sm uppercase tracking-widest text-blue-100">
             Frontend Web Developer
           </p>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-snug md:leading-relaxed">
+          <h1 className="text-4xl font-bold leading-snug text-white md:text-5xl md:leading-relaxed lg:text-6xl">
             Christopher Nathanael Tessy
           </h1>
         </div>
@@ -33,14 +33,14 @@ export const HomeHero = () => {
         <hr />
 
         <div className="flex flex-col gap-4">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-normal md:leading-relaxed">
+          <h1 className="text-3xl font-bold leading-normal text-white md:text-4xl md:leading-relaxed lg:text-5xl">
             Crafting{" "}
-            <Highlight className="text-white leading-normal md:leading-relaxed">
+            <Highlight className="leading-normal text-white md:leading-relaxed">
               Digital Dreams into Reality
             </Highlight>
           </h1>
 
-          <p className="text-sm md:text-base lg:text-xl text-neutral-200">
+          <p className="text-sm text-neutral-200 md:text-base lg:text-xl">
             Hey there! I&apos;m a developer specializing in{" "}
             <span className="font-bold">frontend web development</span>, with
             experience in{" "}
@@ -48,7 +48,7 @@ export const HomeHero = () => {
             Jakarta, Indonesia. Explore my journey through code and innovation.
           </p>
 
-          <div className="w-fit mt-4">
+          <div className="mt-4 w-fit">
             <Link
               href="/cv.pdf"
               download="Christopher Nathaael Tessy_CV.pdf"

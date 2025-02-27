@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import Image from "next/image";
 
@@ -10,16 +10,23 @@ import { projects } from "@/data/projects";
 import { TechStackTooltip } from "@/components/ui/TechStackTooltip";
 import Contact from "@/components/Contact";
 import Link from "next/link";
+import { use } from "react";
 
-const ProjectDetail = ({ params }: { params: { id: string } }) => {
+export default function ProjectDetails({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = use(params);
+
   const router = useRouter();
+  const project = projects.find((p) => p.id === parseInt(id));
 
-  const project = projects.find((p) => p.id === Number(params.id));
-
-  if (!project)
+  if (!project) {
     return (
       <div className="text-white text-center mt-10">Project not found</div>
     );
+  }
 
   return (
     <main className="bg-black">
@@ -146,6 +153,6 @@ const ProjectDetail = ({ params }: { params: { id: string } }) => {
       <Contact />
     </main>
   );
-};
+}
 
-export default ProjectDetail;
+// export default ProjectDetail;

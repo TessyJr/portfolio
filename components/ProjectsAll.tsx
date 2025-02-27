@@ -19,16 +19,19 @@ const ProjectsAll = () => {
           handleLoadMore();
         }
       },
-      { threshold: 1.0 }
+      { threshold: 1.0 },
     );
 
-    if (loadMoreRef.current) {
-      observer.observe(loadMoreRef.current);
+    // Store ref in a variable inside useEffect
+    const currentRef = loadMoreRef.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (loadMoreRef.current) {
-        observer.unobserve(loadMoreRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);

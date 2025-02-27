@@ -62,34 +62,30 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
       twinkleProbability,
       minTwinkleSpeed,
       maxTwinkleSpeed,
-    ]
+    ],
   );
 
   useEffect(() => {
-    const updateStars = () => {
-      if (canvasRef.current) {
-        const canvas = canvasRef.current;
-        const ctx = canvas.getContext("2d");
-        if (!ctx) return;
+    const canvas = canvasRef.current; // Store ref value inside a variable
+    if (!canvas) return;
 
-        const { width, height } = canvas.getBoundingClientRect();
-        canvas.width = width;
-        canvas.height = height;
-        setStars(generateStars(width, height));
-      }
+    const updateStars = () => {
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return;
+
+      const { width, height } = canvas.getBoundingClientRect();
+      canvas.width = width;
+      canvas.height = height;
+      setStars(generateStars(width, height));
     };
 
     updateStars();
 
     const resizeObserver = new ResizeObserver(updateStars);
-    if (canvasRef.current) {
-      resizeObserver.observe(canvasRef.current);
-    }
+    resizeObserver.observe(canvas); // Use the stored canvas variable
 
     return () => {
-      if (canvasRef.current) {
-        resizeObserver.unobserve(canvasRef.current);
-      }
+      resizeObserver.unobserve(canvas); // Use the stored canvas variable
     };
   }, [
     starDensity,
@@ -101,7 +97,7 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
   ]);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
+    const canvas = canvasRef.current; // Store the ref in a variable at the beginning
     if (!canvas) return;
 
     const ctx = canvas.getContext("2d");
@@ -139,7 +135,7 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
       ref={canvasRef}
       className={cn(
         "h-full w-full absolute inset-0 pointer-events-none",
-        className
+        className,
       )}
     />
   );

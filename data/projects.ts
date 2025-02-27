@@ -132,7 +132,8 @@ export const projects: Project[] = [
     role: "Lead Game Developer",
     img: "/projects/game/typecaster-new.png",
     techStack: [Unity],
-    screenshotLink: "",
+    screenshotLink:
+      "https://drive.google.com/drive/folders/17ll11dosTCAo7zFO8G39mM3TJpzPayOe?usp=share_link",
     liveLink: "https://tba-studio.itch.io/typecaster",
   },
   {

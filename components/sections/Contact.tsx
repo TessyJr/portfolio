@@ -43,7 +43,7 @@ const Contact = () => {
 
       <div className="mt-16 flex flex-col items-center justify-between gap-4 text-white md:flex-row">
         <p className="text-sm font-light md:text-base md:font-normal">
-          Copyright © 2024 Christopher Nathanael Tessy
+          Copyright © {new Date().getFullYear()} Christopher Nathaael Tessy
         </p>
 
         <div className="flex items-center gap-4">

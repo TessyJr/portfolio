@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import { socialMedia } from "@/data/social-media";
 
 import GradientBorderButton from "../ui/GradientBorderButton";

@@ -3,14 +3,22 @@ import {
   FaCss3Alt,
   FaElementor,
   FaHtml5,
+  FaJava,
   FaJs,
   FaLaravel,
   FaPhp,
+  FaReact,
   FaSwift,
   FaUnity,
+  FaVuejs,
   FaWordpress,
 } from "react-icons/fa6";
-import { SiJquery, SiTailwindcss, SiWoocommerce } from "react-icons/si";
+import {
+  SiJquery,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiWoocommerce,
+} from "react-icons/si";
 
 export const Html: TechStack = {
   name: "HTML",
@@ -70,4 +78,19 @@ export const Laravel: TechStack = {
 export const Unity: TechStack = {
   name: "Unity",
   icon: <FaUnity className="h-full w-full object-contain" />,
+};
+
+export const ReactJs: TechStack = {
+  name: "React.js",
+  icon: <FaReact className="h-full w-full object-contain" />,
+};
+
+export const NextJs: TechStack = {
+  name: "Next.js",
+  icon: <SiNextdotjs className="h-full w-full object-contain" />,
+};
+
+export const VueJs: TechStack = {
+  name: "Vue.js",
+  icon: <FaVuejs className="h-full w-full object-contain" />,
 };

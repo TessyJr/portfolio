@@ -2,32 +2,32 @@
 
 import Link from "next/link";
 
-import GradientBorderButton from "./ui/GradientBorderButton";
-import ArticleCard from "./ui/ArticleCard";
-import { articles } from "@/data/articles";
+import GradientBorderButton from "../ui/GradientBorderButton";
+import ProjectCard from "../cards/ProjectCard";
+import { projects } from "@/data/projects";
 
-const ArticlesHighlight = () => {
+const ProjectsHighlight = () => {
   return (
     <section className="flex w-full flex-col gap-8 bg-black px-[8%] py-16 md:gap-10 md:px-[10%] md:py-20 lg:gap-12 lg:px-[12%] lg:py-24">
       <h1 className="heading text-white">
-        Hightlights from My{" "}
-        <span className="text-purple-300">Articles Collection</span>
+        A Small Selection of{" "}
+        <span className="text-purple-300">Recent Projects</span>
       </h1>
 
       <div className="flex w-full flex-wrap items-center justify-center gap-6 md:gap-8 lg:gap-10">
-        {articles
+        {projects
           .slice()
           .reverse()
           .slice(0, 3)
-          .map((article) => (
-            <ArticleCard key={article.id} article={article} />
-          ))}
+          .map((project) => {
+            return <ProjectCard key={project.id} project={project} />;
+          })}
       </div>
 
       <div className="flex justify-center text-center">
-        <Link href="/articles">
+        <Link href="/projects">
           <GradientBorderButton
-            title="See all articles"
+            title="See all projects"
             icon={
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -52,4 +52,4 @@ const ArticlesHighlight = () => {
   );
 };
 
-export default ArticlesHighlight;
+export default ProjectsHighlight;

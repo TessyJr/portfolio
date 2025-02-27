@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { articles } from "@/data/articles";
-import ArticleCard from "./ui/ArticleCard";
+import ArticleCard from "../cards/ArticleCard";
 
 const ProjectsAll = () => {
   const [visibleCount, setVisibleCount] = useState(6);

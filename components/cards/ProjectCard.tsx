@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Project } from "@/app/types/Project";
-import { TechStackTooltip } from "./TechStackTooltip";
+import { TechStackTooltip } from "../ui/TechStackTooltip";
 
 const ProjectCard = ({ project }: { project: Project }) => {
   return (

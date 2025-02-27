@@ -3,9 +3,9 @@
 import Navbar from "@/components/ui/Navbar";
 import Highlight from "@/components/ui/Highlight";
 
-import ProjectsAll from "@/components/ProjectsAll";
-import Contact from "@/components/Contact";
-import ProjectsHero from "@/components/ProjectsHero";
+import ProjectsAll from "@/components/projects/ProjectsAll";
+import Contact from "@/components/sections/Contact";
+import ProjectsHero from "@/components/projects/ProjectsHero";
 
 import { motion } from "framer-motion";
 
@@ -15,7 +15,7 @@ const Projects = () => {
       <Navbar />
 
       <ProjectsHero>
-        <h1 className="relative z-10 text-5xl md:text-6xl lg:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 text-center font-sans font-bold mb-8 pb-1">
+        <h1 className="relative z-10 mb-8 bg-gradient-to-b from-neutral-200 to-neutral-600 bg-clip-text pb-1 text-center font-sans text-5xl font-bold text-transparent md:text-6xl lg:text-7xl">
           Project Gallery
         </h1>
 
@@ -32,7 +32,7 @@ const Projects = () => {
             duration: 0.5,
             ease: [0.4, 0.0, 0.2, 1],
           }}
-          className="px-4 text-2xl md:text-3xl lg:text-4xl font-bold text-white max-w-5xl leading-relaxed md:leading-normal lg:leading-snug text-center mx-auto "
+          className="mx-auto max-w-5xl px-4 text-center text-2xl font-bold leading-relaxed text-white md:text-3xl md:leading-normal lg:text-4xl lg:leading-snug"
         >
           Every project is a story of passion, perseverance, and the pursuit of{" "}
           <Highlight className="text-white">digital excellence</Highlight>

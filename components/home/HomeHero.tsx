@@ -3,7 +3,7 @@
 import Image from "next/image";
 
 import Highlight from "@/components/ui/Highlight";
-import GradientBorderButton from "./ui/GradientBorderButton";
+import GradientBorderButton from "../ui/GradientBorderButton";
 import Link from "next/link";
 
 export const HomeHero = () => {

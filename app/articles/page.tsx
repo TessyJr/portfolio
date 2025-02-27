@@ -2,10 +2,10 @@
 
 import Navbar from "@/components/ui/Navbar";
 import Highlight from "@/components/ui/Highlight";
-import Contact from "@/components/Contact";
+import Contact from "@/components/sections/Contact";
 import { motion } from "framer-motion";
-import ArticlesAll from "@/components/ArticlesAll";
-import ArticlesHero from "@/components/ArticlesHero";
+import ArticlesAll from "@/components/articles/ArticlesAll";
+import ArticlesHero from "@/components/articles/ArticlesHero";
 
 const Articles = () => {
   return (

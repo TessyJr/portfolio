@@ -2,14 +2,14 @@ import Image from "next/image";
 
 import { socialMedia } from "@/data/social-media";
 
-import GradientBorderButton from "./ui/GradientBorderButton";
+import GradientBorderButton from "../ui/GradientBorderButton";
 import Link from "next/link";
 
 const Contact = () => {
   return (
-    <section className="bg-slate-950 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')] relative px-[8%] pt-16 md:pt-20 lg:pt-24  pb-8">
-      <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 z-10 relative flex flex-col items-center gap-8">
-        <h1 className="heading lg:max-w-[45vw] text-white">
+    <section className="relative bg-slate-950 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')] px-[8%] pb-8 pt-16 md:pt-20 lg:pt-24">
+      <div className="relative z-10 mx-auto flex max-w-screen-xl flex-col items-center gap-8 px-4 py-8 text-center lg:py-16">
+        <h1 className="heading text-white lg:max-w-[45vw]">
           Ready to Take <span className="text-purple-300">Your</span> Digital
           Presence to the Next Level?
         </h1>
@@ -43,8 +43,8 @@ const Contact = () => {
         </a>
       </div>
 
-      <div className="flex mt-16 md:flex-row flex-col justify-between items-center text-white gap-4">
-        <p className="md:text-base text-sm md:font-normal font-light">
+      <div className="mt-16 flex flex-col items-center justify-between gap-4 text-white md:flex-row">
+        <p className="text-sm font-light md:text-base md:font-normal">
           Copyright © 2024 Christopher Nathanael Tessy
         </p>
 
@@ -56,7 +56,7 @@ const Contact = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className="p-2 w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-white rounded-lg text-black">
+              <div className="saturate-180 flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg bg-white p-2 text-black backdrop-blur-lg backdrop-filter">
                 {socialMedia.icon.icon}
               </div>
             </Link>
@@ -64,7 +64,7 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="bg-gradient-to-b to-transparent from-black w-full h-80 absolute top-0 left-0 z-0"></div>
+      <div className="absolute left-0 top-0 z-0 h-80 w-full bg-gradient-to-b from-black to-transparent"></div>
     </section>
   );
 };

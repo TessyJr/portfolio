@@ -2,11 +2,11 @@
 
 import Navbar from "@/components/ui/Navbar";
 
-import Experience from "@/components/Experience";
-import HomeHero from "@/components/HomeHero";
-import Contact from "@/components/Contact";
-import ProjectsHighlight from "@/components/ProjectsHighlight";
-import ArticlesHighlight from "@/components/ArticlesHighlight";
+import Experience from "@/components/home/Experience";
+import HomeHero from "@/components/home/HomeHero";
+import Contact from "@/components/sections/Contact";
+import ProjectsHighlight from "@/components/home/ProjectsHighlight";
+import ArticlesHighlight from "@/components/home/ArticlesHighlight";
 
 const Home = () => {
   return (

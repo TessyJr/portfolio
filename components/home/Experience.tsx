@@ -1,14 +1,14 @@
 "use client";
 
 import { experiences } from "@/data/experiences";
-import GradientBorderButton from "./ui/GradientBorderButton";
+import GradientBorderButton from "../ui/GradientBorderButton";
 import Link from "next/link";
 
 const Experience = () => {
   const reversedExperiences = [...experiences].reverse();
 
   return (
-    <section className="bg-black w-full flex flex-col px-[8%] md:px-[10%] lg:px-[12%] py-16 md:py-20 lg:py-24 gap-8 md:gap-12 lg:gap-16">
+    <section className="flex w-full flex-col gap-8 bg-black px-[8%] py-16 md:gap-12 md:px-[10%] md:py-20 lg:gap-16 lg:px-[12%] lg:py-24">
       <h1 className="heading text-white">
         My <span className="text-purple-300">Work Experience</span>
       </h1>
@@ -16,7 +16,7 @@ const Experience = () => {
       <ol className="relative border-s border-gray-700">
         {reversedExperiences.map((item) => (
           <li className="mb-10 ms-4" key={item.id}>
-            <div className="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-gray-900 bg-gray-700"></div>
+            <div className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-gray-900 bg-gray-700"></div>
 
             <time className="mb-1 text-sm font-normal leading-none text-gray-500">
               {item.duration}
@@ -38,7 +38,7 @@ const Experience = () => {
         ))}
       </ol>
 
-      <div className="flex justify-center text-center -mt-4 md:-mt-8 lg:-mt-12">
+      <div className="-mt-4 flex justify-center text-center md:-mt-8 lg:-mt-12">
         <Link
           href="https://www.linkedin.com/in/christophernathanaeltessy/details/experience/"
           target="_blank"

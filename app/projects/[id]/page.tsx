@@ -8,7 +8,7 @@ import { ShootingStars } from "@/components/ui/ShootingStars";
 import { StarsBackground } from "@/components/ui/StarsBackground";
 import { projects } from "@/data/projects";
 import { TechStackTooltip } from "@/components/ui/TechStackTooltip";
-import Contact from "@/components/Contact";
+import Contact from "@/components/sections/Contact";
 import Link from "next/link";
 import { use } from "react";
 

@@ -1,2 +1,4 @@
-npx pretty-quick --staged
-npm run check
+# npx pretty-quick --staged
+# npm run check
+
+npx lint-staged

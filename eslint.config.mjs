@@ -1,14 +1,90 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
-import tseslint from "typescript-eslint";
-import pluginReact from "eslint-plugin-react";
+import { FlatCompat } from "@eslint/eslintrc";
 
+import { dirname } from "path";
+import { fileURLToPath } from "url";
 
-/** @type {import('eslint').Linter.Config[]} */
-export default [
-  {files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"]},
-  {languageOptions: { globals: globals.browser }},
-  pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
-  pluginReact.configs.flat.recommended,
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+});
+
+const eslintConfig = [
+  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  ...compat.plugins("@typescript-eslint"),
+  {
+    rules: {
+      "import/order": [
+        "error",
+        {
+          groups: [
+            "external",
+            "builtin",
+            "internal",
+            "sibling",
+            "parent",
+            "index",
+          ],
+          pathGroups: [
+            {
+              pattern: "react",
+              group: "external",
+              position: "before",
+            },
+            {
+              pattern: "react*",
+              group: "external",
+              position: "before",
+            },
+            {
+              pattern: "react*/**",
+              group: "external",
+              position: "before",
+            },
+            {
+              pattern: "next",
+              group: "external",
+              position: "before",
+            },
+            {
+              pattern: "next*",
+              group: "external",
+              position: "before",
+            },
+            {
+              pattern: "next*/**",
+              group: "external",
+              position: "before",
+            },
+          ],
+          pathGroupsExcludedImportTypes: ["react", "next"],
+          alphabetize: {
+            order: "asc",
+            caseInsensitive: true,
+          },
+        },
+      ],
+      "@typescript-eslint/array-type": "off",
+      "@typescript-eslint/consistent-type-definitions": "off",
+      "@typescript-eslint/consistent-type-imports": [
+        "warn",
+        {
+          prefer: "type-imports",
+          fixStyle: "inline-type-imports",
+        },
+      ],
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          argsIgnorePattern: "^_",
+          ignoreRestSiblings: true,
+        },
+      ],
+
+      "@typescript-eslint/require-await": "off",
+    },
+  },
 ];
+
+export default eslintConfig;

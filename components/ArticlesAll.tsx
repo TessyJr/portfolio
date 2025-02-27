@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import ProjectCard from "./ui/ProjectCard";
-import { projects } from "@/data/projects";
+import { articles } from "@/data/articles";
+import ArticleCard from "./ui/ArticleCard";
 
 const ProjectsAll = () => {
   const [visibleCount, setVisibleCount] = useState(6);
@@ -38,16 +38,16 @@ const ProjectsAll = () => {
   return (
     <section className="flex w-full flex-col gap-4 bg-black px-[8%] pb-16 md:gap-8 md:px-[10%] md:pb-20 lg:gap-12 lg:px-[12%] lg:pb-24">
       <div className="flex w-full flex-wrap items-center justify-center gap-6 md:gap-8 lg:gap-10">
-        {projects
+        {articles
           .slice()
           .reverse()
           .slice(0, visibleCount)
-          .map((project) => (
-            <ProjectCard key={project.id} project={project} />
+          .map((article) => (
+            <ArticleCard key={article.id} article={article} />
           ))}
       </div>
 
-      {visibleCount < projects.length && (
+      {visibleCount < articles.length && (
         <div ref={loadMoreRef} className="h-10 w-full"></div>
       )}
     </section>

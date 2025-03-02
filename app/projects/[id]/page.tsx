@@ -3,24 +3,19 @@
 import Image from "next/image";
 
 import Navbar from "@/components/ui/Navbar";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { ShootingStars } from "@/components/ui/ShootingStars";
 import { StarsBackground } from "@/components/ui/StarsBackground";
 import { projects } from "@/data/projects";
 import { TechStackTooltip } from "@/components/ui/TechStackTooltip";
 import Contact from "@/components/sections/Contact";
 import Link from "next/link";
-import { use } from "react";
 
-export default function ProjectDetails({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
-  const { id } = use(params);
+export default function ProjectDetails() {
+  const { id } = useParams(); // Get id from the URL
 
   const router = useRouter();
-  const project = projects.find((p) => p.id === parseInt(id));
+  const project = projects.find((p) => p.id === parseInt(id as string));
 
   if (!project) {
     return (
@@ -66,6 +61,7 @@ export default function ProjectDetails({
               src={project.img}
               alt={`Cover image of ${project.title} project`}
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
               className="object-cover"
             />
           </div>

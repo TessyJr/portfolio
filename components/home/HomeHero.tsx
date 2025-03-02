@@ -13,13 +13,15 @@ export const HomeHero = () => {
 
       <div className="relative z-10 flex w-full flex-col gap-4 md:gap-6 lg:gap-8">
         <div className="flex flex-col gap-4 md:gap-5 lg:gap-6">
-          <Image
-            src="/me.jpg"
-            alt="Picture of Christophe Nathanael Tessy"
-            width={256}
-            height={0}
-            className="w-48 rounded-lg md:w-56 lg:w-64"
-          />
+          <div className="relative h-48 w-48 overflow-hidden rounded-lg md:h-56 md:w-56 lg:h-64 lg:w-64">
+            <Image
+              src="/me.jpg"
+              alt="Picture of Christophe Nathanael Tessy"
+              fill
+              sizes="(max-width: 768px) 192px, (max-width: 1024px) 224px, 256px"
+              className="object-cover"
+            />
+          </div>
 
           <p className="-mb-2 text-sm uppercase tracking-widest text-blue-100">
             Frontend Web Developer

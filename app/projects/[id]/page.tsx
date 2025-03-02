@@ -12,7 +12,7 @@ import Contact from "@/components/sections/Contact";
 import Link from "next/link";
 
 export default function ProjectDetails() {
-  const { id } = useParams(); // Get id from the URL
+  const { id } = useParams();
 
   const router = useRouter();
   const project = projects.find((p) => p.id === parseInt(id as string));

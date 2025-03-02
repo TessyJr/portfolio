@@ -51,13 +51,7 @@ export const HomeHero = () => {
           </p>
 
           <div className="mt-4 w-fit">
-            <Link
-              href="/cv.pdf"
-              download="Christopher Nathaael Tessy_CV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              passHref
-            >
+            <a href="/cv.pdf" download="Christopher_Nathanael_Tessy_CV.pdf">
               <GradientBorderButton
                 title="Download CV"
                 icon={
@@ -78,7 +72,7 @@ export const HomeHero = () => {
                 }
                 position="right"
               />
-            </Link>
+            </a>
           </div>
         </div>
       </div>

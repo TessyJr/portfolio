@@ -70,9 +70,10 @@ const ProjectCard = ({ project }: { project: Project }) => {
             </button>
           </Link>
         ) : (
-          <div>
+          <div className="flex w-full text-sm font-medium">
             <button className="pointer-events-none inline-flex h-12 w-full items-center justify-center gap-2 rounded-lg border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 text-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-              <span className="flex h-3 w-3">
+              <span className="relative flex h-3 w-3">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-slate-800 opacity-75"></span>
                 <span className="relative inline-flex h-3 w-3 rounded-full bg-slate-800"></span>
               </span>
               Live Preview

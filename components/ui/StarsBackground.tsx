@@ -66,7 +66,7 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
   );
 
   useEffect(() => {
-    const canvas = canvasRef.current; // Store ref value inside a variable
+    const canvas = canvasRef.current;
     if (!canvas) return;
 
     const updateStars = () => {
@@ -82,10 +82,10 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
     updateStars();
 
     const resizeObserver = new ResizeObserver(updateStars);
-    resizeObserver.observe(canvas); // Use the stored canvas variable
+    resizeObserver.observe(canvas);
 
     return () => {
-      resizeObserver.unobserve(canvas); // Use the stored canvas variable
+      resizeObserver.unobserve(canvas);
     };
   }, [
     starDensity,
@@ -97,7 +97,7 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
   ]);
 
   useEffect(() => {
-    const canvas = canvasRef.current; // Store the ref in a variable at the beginning
+    const canvas = canvasRef.current;
     if (!canvas) return;
 
     const ctx = canvas.getContext("2d");
@@ -134,7 +134,7 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
     <canvas
       ref={canvasRef}
       className={cn(
-        "h-full w-full absolute inset-0 pointer-events-none",
+        "pointer-events-none absolute inset-0 h-full w-full",
         className,
       )}
     />

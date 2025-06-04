@@ -176,6 +176,6 @@ export const projects: Project[] = [
     techStack: [TypeScript, TailwindCss, NextJs],
     screenshotLink:
       "https://drive.google.com/drive/folders/1MEFu9CfrfLSxKHradxzE_sHheuB5Yx-2?usp=share_link",
-    liveLink: "https://bestiepanti.social",
+    liveLink: "https://newtn.id",
   },
 ];

@@ -13,12 +13,15 @@ import {
   FaVuejs,
   FaWordpress,
 } from "react-icons/fa6";
+import { PiFileCSharp } from "react-icons/pi";
 import {
   SiJquery,
   SiNextdotjs,
   SiTailwindcss,
+  SiTypescript,
   SiWoocommerce,
 } from "react-icons/si";
+import { TbBrandCSharp } from "react-icons/tb";
 
 export const Html: TechStack = {
   name: "HTML",
@@ -93,4 +96,14 @@ export const NextJs: TechStack = {
 export const VueJs: TechStack = {
   name: "Vue.js",
   icon: <FaVuejs className="h-full w-full object-contain" />,
+};
+
+export const TypeScript: TechStack = {
+  name: "TypeScript",
+  icon: <SiTypescript className="h-full w-full object-contain" />,
+};
+
+export const CSharp: TechStack = {
+  name: "C#",
+  icon: <TbBrandCSharp className="h-full w-full object-contain" />,
 };

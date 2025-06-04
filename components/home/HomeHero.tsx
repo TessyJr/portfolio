@@ -24,7 +24,7 @@ export const HomeHero = () => {
           </div>
 
           <p className="-mb-2 text-sm uppercase tracking-widest text-blue-100">
-            Frontend Web Developer
+            Front-end Web Developer
           </p>
 
           <h1 className="text-4xl font-bold leading-snug text-white md:text-5xl md:leading-relaxed lg:text-6xl">
@@ -44,7 +44,7 @@ export const HomeHero = () => {
 
           <p className="text-sm text-neutral-200 md:text-base lg:text-xl">
             Hey there! I&apos;m a developer specializing in{" "}
-            <span className="font-bold">frontend web development</span>, with
+            <span className="font-bold">front-end web development</span>, with
             experience in{" "}
             <span className="font-bold">unity game development</span>. Based in
             Jakarta, Indonesia. Explore my journey through code and innovation.
